@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปรายงาน The Criminal Code (ฉบับสมบูรณ์รายหน้า)</title>
+    
+<style>
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #0d47a1;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* สไลด์โชว์ */
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 80px auto 50px auto;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    min-height: 500px;
+    transition: margin-left 0.3s ease;
+}
+
+.slide { display: none; animation: fade 0.5s; }
+.slide.active { display: block; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+.slide h2 { color: var(--primary-color); margin-bottom: 10px; }
+
+.slide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.slide-content .en, .slide-content .th {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.nav-btn {
+    cursor: pointer;
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+}
+.nav-btn:hover { background-color: var(--secondary-color); transform: translateY(-2px); }
+
+/* Progress bar */
+.progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+}
+.sidebar.active { left: 0; }
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    padding-bottom: 8px;
+}
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar ul li { margin: 8px 0; }
+.sidebar ul li a {
+    color: white; text-decoration: none; font-size: 14px;
+    display: block; padding: 6px 10px; border-radius: 5px;
+    transition: background 0.2s;
+}
+.sidebar ul li a:hover { background: rgba(255,255,255,0.2); }
+
+/* Toggle button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.2s;
+}
+.toggle-btn:hover { background: var(--secondary-color); }
+</style>
+
+</head>
+<body>
+
+<!-- ปุ่มเปิด Sidebar -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰ สารบัญ</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <h3>สารบัญ</h3>
+    <ul>
+        <li><a href="#" onclick="goToSlide(0)">บทที่ 1: Introduction</a></li>
+        <li><a href="#" onclick="goToSlide(4)">บทที่ 2: Literature Review</a></li>
+        <li><a href="#" onclick="goToSlide(10)">บทที่ 3: Methodology</a></li>
+        <li><a href="#" onclick="goToSlide(18)">บทที่ 4: Results</a></li>
+        <li><a href="#" onclick="goToSlide(26)">บทที่ 5: Conclusion</a></li>
+        <li><a href="#" onclick="goToSlide(32)">เอกสารอ้างอิง</a></li>
+    </ul>
+</div>
+
+
+<div class="slideshow-container">
+
+    <div class="slide active">
+        <h2>บทที่ 1: Introduction - Page 1</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page introduces the <span class="keyword">"Significance of the Problem"</span>. It states that English is crucial for communication, education, and careers. However, many Thai students struggle and lack motivation due to traditional learning methods that focus on memorization. <span class="keyword">Game-Based Learning</span> is presented as an enjoyable and meaningful alternative that can also enhance critical thinking skills.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้คือบทนำที่ชี้ให้เห็นถึง <span class="keyword">ความสำคัญของปัญหา</span> โดยกล่าวว่าภาษาอังกฤษจำเป็นมาก แต่เด็กไทยจำนวนมากยังเรียนไม่สำเร็จเพราะขาดแรงจูงใจและเบื่อการเรียนแบบเดิมๆ ที่เน้นการท่องจำ จึงเสนอแนวทาง <span class="keyword">"การเรียนรู้ผ่านเกม"</span> ที่สนุกและมีความหมายมากกว่า ซึ่งไม่เพียงแต่ช่วยเรื่องภาษา แต่ยังช่วยพัฒนาทักษะการคิดวิเคราะห์อีกด้วย</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 1: Introduction - Page 2</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page outlines the <span class="keyword">"Research Objectives"</span> and "Scope of the Study". The objectives are: 1. To develop the game "The Criminal Code". 2. To evaluate its effectiveness. 3. To assess student satisfaction. The scope identifies the population and the sample group (36 M.5/1 students and 36 M.1/1 students). It also defines the variables: the game is the <span class="keyword">independent variable</span>, while proficiency, critical thinking, and satisfaction are the <span class="keyword">dependent variables</span>.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้ระบุ <span class="keyword">วัตถุประสงค์ของการวิจัย</span> 3 ข้อ คือ 1. เพื่อพัฒนาเกม 2. เพื่อประเมินผลของเกม 3. เพื่อสำรวจความพึงพอใจ และกำหนด <span class="keyword">ขอบเขตการศึกษา</span> ว่ากลุ่มตัวอย่างคือนักเรียนชั้น ม.5/1 และ ม.1/1 และระบุตัวแปรที่ใช้ศึกษา คือ <span class="keyword">ตัวแปรต้น</span> (เกม) และ <span class="keyword">ตัวแปรตาม</span> (ทักษะภาษา, การคิดวิเคราะห์, ความพึงพอใจ)</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 1: Introduction - Page 3</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>The "Scope of the Study" continues, specifying content will focus on vocabulary, grammar, and reasoning for solving mystery cases over 4 weeks. <span class="keyword">"Expected Benefits"</span> are listed, including providing a fun learning tool for students and a new resource for teachers. Lastly, "Definition of Terms" begins, defining "The Criminal Code" Game.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้กล่าวถึงขอบเขตด้านเนื้อหาว่าจะเน้นคำศัพท์และไวยากรณ์เกี่ยวกับการสืบสวน ใช้เวลา 4 สัปดาห์ ส่วน <span class="keyword">ประโยชน์ที่คาดว่าจะได้รับ</span> คือนักเรียนจะมีเครื่องมือเรียนรู้ที่สนุก ครูมีสื่อการสอนใหม่ๆ และเริ่มต้น <span class="keyword">นิยามศัพท์เฉพาะ</span> โดยอธิบายว่าเกม "The Criminal Code" คืออะไร</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 1: Introduction - Page 4</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page continues the "Definition of Terms", explaining: <span class="keyword">English Proficiency</span>, <span class="keyword">Critical Thinking Skills</span>, <span class="keyword">Game-Based Learning (GBL)</span>, and <span class="keyword">Student Satisfaction</span>.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้เป็น <span class="keyword">นิยามศัพท์เฉพาะ (ต่อ)</span> โดยอธิบายความหมายของคำสำคัญต่างๆ: ทักษะภาษาอังกฤษ, ทักษะการคิดเชิงวิพากษ์, การเรียนรู้โดยใช้เกมเป็นฐาน (GBL), และความพึงพอใจของนักเรียน</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 5</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page begins Chapter 2. It introduces <span class="keyword">Game-Based Learning (GBL)</span>, defining it as the use of full games for learning, which is different from "gamification". It cites researchers to support the idea that GBL can make learning more effective and enjoyable.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>เริ่มต้นบทที่ 2 ทบทวนวรรณกรรม โดยอธิบายแนวคิด <span class="keyword">การเรียนรู้โดยใช้เกมเป็นฐาน (GBL)</span> ว่าคือการนำ "เกมทั้งเกม" มาใช้สอน ซึ่งแตกต่างจาก "Gamification" และมีการอ้างอิงงานวิจัยที่ยืนยันว่า GBL ทำให้การเรียนสนุกและมีประสิทธิภาพ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 6</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page features an image comparing "Gamification" vs "Game-Based Learning". It then introduces the "Relevant Theories" guiding the project, starting with <span class="keyword">Constructivism Theory</span>. This theory suggests that learners actively build their own knowledge through experience.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้มีรูปภาพเปรียบเทียบ "Gamification" และ "GBL" จากนั้นจึงอธิบายทฤษฎีแรกคือ <span class="keyword">ทฤษฎีการสร้างความรู้ด้วยตนเอง (Constructivism)</span> ซึ่งเชื่อว่าคนเราเรียนรู้ได้ดีที่สุดจากการลงมือทำและสร้างความเข้าใจขึ้นมาเอง</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 7</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page shows images illustrating Constructivism and Discovery Learning. It explains the second key theory, <span class="keyword">Discovery Learning</span>. This concept states that learning is a process of active discovery where students interact with their environment to solve problems.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้มีภาพประกอบทฤษฎี และอธิบายทฤษฎีที่สองคือ <span class="keyword">ทฤษฎีการเรียนรู้โดยการค้นพบ (Discovery Learning)</span> ซึ่งเชื่อว่าการเรียนรู้ที่ดีเกิดจากการที่ผู้เรียนได้สำรวจและค้นพบความรู้ด้วยตัวเองเหมือนนักสืบ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 8</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page discusses <span class="keyword">"Previous Research"</span>. It mentions that the project was inspired by the popular series <span class="keyword">"Detective Conan"</span> and also references another successful Thai educational board game project called "The Journey Board Game".</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้รวบรวม <span class="keyword">งานวิจัยที่เกี่ยวข้อง</span> ที่เคยมีคนทำไว้ มีการกล่าวถึงว่าโครงงานนี้ได้รับแรงบันดาลใจมาจาก <span class="keyword">"ยอดนักสืบจิ๋วโคนัน"</span> และยกตัวอย่างโครงงานบอร์ดเกมเพื่อการศึกษาของไทยที่ประสบความสำเร็จ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 9</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page displays an image of "The Journey Board Game" and introduces the "Game Development Tools". The first tool mentioned is <span class="keyword">Canva</span>, which was used for all graphic design elements. Screenshots of the Canva website are included.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้มีรูปตัวอย่างบอร์ดเกมอื่น และเริ่มอธิบาย <span class="keyword">เครื่องมือที่ใช้ในการพัฒนาเกม</span> ชิ้นแรกคือ <span class="keyword">Canva</span> ซึ่งเป็นโปรแกรมที่ใช้ในการออกแบบกราฟิกทั้งหมดของเกมให้มีความสวยงาม พร้อมภาพประกอบ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 2: Literature Review - Page 10</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page continues listing development tools. <span class="keyword">CapCut</span> was used for video editing to create immersive clips. <span class="keyword">Microsoft Office</span> was used for scriptwriting and organization. Screenshots of CapCut's interface are shown.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้อธิบายเครื่องมือพัฒนาเกมต่อ ได้แก่ <span class="keyword">CapCut</span> ที่ใช้สำหรับตัดต่อวิดีโอประกอบเกม และ <span class="keyword">Microsoft Office</span> ที่ใช้สำหรับเขียนสคริปต์และจัดระเบียบเนื้อหา</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 11</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page begins Chapter 3, "METHODOLOGY". It describes the Research Design as <span class="keyword">quasi-experimental</span>, using a <span class="keyword">pre-test-post-test</span> one-group design. It also restates the Population and Sample.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>เริ่มต้นบทที่ 3 ระเบียบวิธีวิจัย โดยระบุ <span class="keyword">รูปแบบการวิจัย</span> ว่าเป็นการวิจัย <span class="keyword">กึ่งทดลอง</span> คือมีการสอบก่อนเรียน (Pre-test) และหลังเรียน (Post-test) เพื่อวัดผล และย้ำเรื่องประชากรและกลุ่มตัวอย่าง</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 12</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page describes the primary "Research Instruments". The main instrument is <span class="keyword">"The Criminal Code" Board Game</span> itself. The description notes its inspiration, components, and gameplay overview where players work as detectives.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้อธิบาย <span class="keyword">เครื่องมือที่ใช้ในการวิจัย</span> ชิ้นสำคัญที่สุด คือ <span class="keyword">บอร์ดเกม "The Criminal Code"</span> โดยระบุว่าได้รับแรงบันดาลใจจากอะไร ประกอบไปด้วยอะไรบ้าง และมีวิธีการเล่นคร่าวๆ อย่างไร</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 13</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page lists the three mystery cases developed for the game. It then describes the other two research instruments: the <span class="keyword">English Proficiency Test</span> and the <span class="keyword">Student Satisfaction Questionnaire</span>. The "Procedures" section also begins, outlining Phase 1: Game Development.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้บอกชื่อคดีทั้ง 3 คดี และอธิบายเครื่องมือวิจัยอีก 2 ชิ้น คือ <span class="keyword">แบบทดสอบวัดทักษะ</span> และ <span class="keyword">แบบสอบถามความพึงพอใจ</span> จากนั้นจึงเริ่มอธิบายขั้นตอนการดำเนินงาน ระยะที่ 1 คือการพัฒนาเกม</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 14</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page details Phase 1 of the procedures. The steps included game component design, multimedia production, pilot testing, and validation by experts. A "behind the scenes" photo of the project planning is included.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้ลงรายละเอียดขั้นตอนใน ระยะที่ 1 (การพัฒนาเกม) ต่อ ว่ามีการออกแบบ, สร้างสื่อ, นำเกมไป <span class="keyword">ทดลองใช้ (Pilot Test)</span> และให้ผู้เชี่ยวชาญตรวจสอบ พร้อมมีภาพเบื้องหลังการทำงานประกอบ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 15</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page shows more "behind the scenes" photos. It outlines the beginning of <span class="keyword">Phase 2: Data Collection</span>, which started with the Pre-test Administration, followed by the Game Intervention (students playing the game).</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้มีรูปภาพเบื้องหลังเพิ่มเติม และเริ่มอธิบาย <span class="keyword">ระยะที่ 2 (การเก็บรวบรวมข้อมูล)</span> โดยเริ่มต้นจากการทำ <span class="keyword">แบบทดสอบก่อนเรียน (Pre-test)</span> จากนั้นจึงให้นักเรียนได้ลงมือเล่นเกม</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 16</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page continues Phase 2. After the gameplay period, the <span class="keyword">Post-test</span> was administered, followed by the <span class="keyword">Satisfaction Questionnaire</span>. Qualitative data was also collected through observation. More photos are included.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้อธิบายขั้นตอน ระยะที่ 2 (ต่อ) ว่าหลังจากเล่นเกมเสร็จแล้ว ก็ให้นักเรียนทำ <span class="keyword">แบบทดสอบหลังเรียน (Post-test)</span> และ <span class="keyword">แบบสอบถามความพึงพอใจ</span> นอกจากนี้ยังมีการเก็บข้อมูลจากการสังเกตด้วย</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 17</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page outlines <span class="keyword">Phase 3: Data Analysis</span>. It explains that Quantitative Data (scores) were analyzed using statistics (mean, t-tests). Qualitative Data (observations) were analyzed for recurring themes.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้อธิบาย <span class="keyword">ระยะที่ 3 (การวิเคราะห์ข้อมูล)</span> ว่าทำอย่างไร โดยแบ่งเป็นข้อมูลเชิงปริมาณ (ตัวเลข) ที่ใช้สถิติ และข้อมูลเชิงคุณภาพ (ความคิดเห็น) ที่นำมาวิเคราะห์หาประเด็นที่น่าสนใจ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 3: Methodology - Page 18</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page lists the <span class="keyword">"Material"</span> used to create the physical version of the board game, including photo paper, scissors, glue, a printer, and a recycled box. Photos of these materials are displayed.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้แสดงรูปภาพ <span class="keyword">วัสดุอุปกรณ์</span> ทั้งหมดที่ใช้ในการประดิษฐ์ตัวบอร์ดเกมขึ้นมาจริงๆ เช่น กระดาษ, กรรไกร, กาว, เครื่องปริ้นท์, แผ่นเคลือบ และกล่องกระดาษรีไซเคิล</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 19</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page begins Chapter 4, "RESULTS". It presents the findings from the English tests. <span class="keyword">Table 4.1</span> shows the pre-test and post-test scores for the upper secondary group (<span class="keyword">Mathayom 5/1</span>).</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>เริ่มต้นบทที่ 4 ผลการวิจัย <span class="keyword">ตารางที่ 4.1</span> แสดงผลคะแนนสอบก่อนเรียนและหลังเรียนของกลุ่มนักเรียน <span class="keyword">ม.5/1</span> โดยมีทั้งค่าเฉลี่ยและค่าสถิติอื่นๆ</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 20</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page summarizes the findings for the M.5/1 group. Their mean post-test score (83.20) was significantly higher than their pre-test score (62.50), showing an average progress of <span class="keyword">33.12%</span>. It then introduces results for M.1/1 in Table 4.2.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้สรุปผลของกลุ่ม ม.5/1 ว่าคะแนนเฉลี่ยหลังเล่นสูงกว่าก่อนเล่นอย่างมีนัยสำคัญ คิดเป็นความก้าวหน้าเฉลี่ย <span class="keyword">33.12%</span> จากนั้นจึงเริ่มนำเสนอผลของกลุ่ม ม.1/1 ในตารางต่อไป</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 21</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page summarizes the findings for the M.1/1 group. Their post-test score (68.10) was also significantly higher, with a remarkable average progress of <span class="keyword">59.11%</span>. Table 4.3 provides a comparative analysis of progress between the two groups.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้สรุปผลของกลุ่ม ม.1/1 ว่าคะแนนหลังเล่นสูงกว่าก่อนเล่นเช่นกัน โดยมี <span class="keyword">ความก้าวหน้าสูงถึง 59.11%</span> จากนั้นตาราง 4.3 ได้เปรียบเทียบให้เห็นชัดเจนว่า ม.1 มีพัฒนาการเป็นเปอร์เซ็นต์ที่สูงกว่ามาก</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 22</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page presents the "Student Satisfaction Results" for the M.5/1 group. Tables 4.4 and 4.5 show their overall satisfaction was in the <span class="keyword">"Highest"</span> category (mean score of 4.70 out of 5).</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้แสดง <span class="keyword">ผลความพึงพอใจของนักเรียน</span> กลุ่ม ม.5/1 ซึ่งพบว่าความพึงพอใจโดยรวมอยู่ใน <span class="keyword">ระดับสูงสุด</span> (ค่าเฉลี่ย 4.70 จาก 5)</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 23</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page presents the "Student Satisfaction Results" for the M.1/1 group. Tables 4.6 and 4.7 show this group also reported satisfaction in the <span class="keyword">"Highest"</span> category (mean score of 4.85 out of 5), with high scores for enjoyment.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้แสดง <span class="keyword">ผลความพึงพอใจของนักเรียน</span> กลุ่ม ม.1/1 ซึ่งผลออกมาว่ามีความพึงพอใจโดยรวมอยู่ใน <span class="keyword">ระดับสูงสุด</span> เช่นกัน (ค่าเฉลี่ย 4.85 จาก 5) โดยเฉพาะด้านความสนุก</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 24</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page begins presenting the <span class="keyword">"Qualitative Findings"</span>. Key themes from the M.5/1 group included high engagement, teamwork, and an appreciation for the critical thinking challenges.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้เริ่มนำเสนอ <span class="keyword">ผลการวิเคราะห์เชิงคุณภาพ</span> (จากความคิดเห็น) โดยประเด็นหลักที่พบในกลุ่ม ม.5/1 คือ การมีส่วนร่วม, การทำงานเป็นทีม และชื่นชมความท้าทายด้านการคิดวิเคราะห์</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 25</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page continues the qualitative findings. Key themes from the M.1/1 group included great motivation and enjoyment, and <span class="keyword">increased confidence</span> in using English. They found the game reduced their shyness about speaking.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้กล่าวถึงผลเชิงคุณภาพต่อ ประเด็นหลักที่พบในกลุ่ม ม.1/1 คือ เกมสร้างแรงจูงใจและความสนุกสนาน และที่สำคัญคือ ช่วย <span class="keyword">เพิ่มความมั่นใจในการใช้ภาษาอังกฤษ</span> ทำให้กล้าพูดมากขึ้น</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 4: Results - Page 26</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page presents comparative insights from the qualitative data. While M.5 students were more analytical, M.1 students were more vocally excited. The conclusion is that the game has potential for <span class="keyword">both levels</span> with minor adjustments.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้ <span class="keyword">เปรียบเทียบเชิงลึก</span> พบว่า ม.1 แสดงความตื่นเต้นมากกว่า ในขณะที่ ม.5 จะเน้นการวิเคราะห์อย่างใจเย็น สรุปได้ว่าเกมนี้สามารถปรับใช้ได้กับทั้งสองระดับชั้น</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 27</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page begins Chapter 5. The <span class="keyword">"Discussion"</span> section starts by confirming that the game was effective in enhancing English proficiency and critical thinking, referencing the significant score improvements from Chapter 4.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>เริ่มต้นบทที่ 5 สรุปผล โดยเริ่มจากส่วนของ <span class="keyword">การอภิปรายผล</span> ซึ่งยืนยันว่าเกมนี้มีประสิทธิภาพในการพัฒนาทักษะจริง โดยอ้างอิงจากคะแนนที่เพิ่มขึ้นอย่างชัดเจนในบทที่ 4</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 28</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>The discussion continues, highlighting the finding that M.1/1 students showed greater percentage progress, suggesting the game is highly impactful for students with a <span class="keyword">lower initial foundation</span>.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้อภิปรายผลต่อโดยเน้นย้ำประเด็นสำคัญว่า การที่ ม.1 มีพัฒนาการสูงกว่า แสดงว่าเกมนี้มีประโยชน์อย่างยิ่งสำหรับผู้เรียนที่ <span class="keyword">มีพื้นฐานน้อย</span> เพราะช่วยสร้างความมั่นใจได้ดี</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 29</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page discusses the "Highest" student satisfaction, linking it to intrinsic motivation. The <span class="keyword">"Conclusion"</span> section then begins, summarizing the main findings: the game is effective, applicable, and highly engaging.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้กล่าวถึงความพึงพอใจที่อยู่ในระดับสูงสุด ว่าเป็นเพราะเกมสร้างแรงจูงใจได้สำเร็จ จากนั้นจึงเข้าสู่ส่วน <span class="keyword">สรุปผลการวิจัย</span> ว่าเกมนี้มีประสิทธิภาพ, ใช้ได้ทุกระดับ และสร้างการมีส่วนร่วมได้ดี</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 30</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page concludes that while M.5/1 students had higher absolute scores, M.1/1 students showed greater progress. The <span class="keyword">"Recommendations"</span> section begins, proposing how the findings can be used.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้สรุปประเด็นอีกครั้งว่าแม้ ม.5 จะได้คะแนนสูงกว่า แต่ ม.1 มีพัฒนาการมากกว่า จากนั้นจึงเริ่มส่วนของ <span class="keyword">ข้อเสนอแนะ</span> ว่าควรจะนำผลวิจัยนี้ไปต่อยอดอย่างไร</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 31</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page details the "Recommendations for Practice and Application". It suggests that teachers should <span class="keyword">integrate the game into the curriculum</span>, use differentiated instruction, receive training, and promote collaboration.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้ให้ <span class="keyword">ข้อเสนอแนะเพื่อการนำไปใช้จริง</span> ได้แก่: ครูควรนำเกมไปใช้ในหลักสูตร, ปรับความยากง่าย, อบรมครูผู้สอน, และเน้นย้ำเรื่องการทำงานเป็นทีม</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>บทที่ 5: Conclusion - Page 32</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page provides "Recommendations for Future Research". It suggests conducting a long-term study, using a larger sample, developing new game variations, and <span class="keyword">comparing the game to other teaching methods</span>.</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้ให้ <span class="keyword">ข้อเสนอแนะสำหรับการทำวิจัยในอนาคต</span> ได้แก่: ศึกษาผลระยะยาว, ใช้กลุ่มตัวอย่างใหญ่ขึ้น, สร้างเกมรูปแบบใหม่ๆ และ <span class="keyword">วิจัยเปรียบเทียบกับวิธีสอนแบบอื่น</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>เอกสารอ้างอิง (Reference) - Page 33</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This page is the first page of the <span class="keyword">"REFERENCE"</span> section. It lists all the academic sources cited in the report, from Bruner, J. S. (1961) to Sa-Aradsri, N., et al. (n.d.).</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้คือหน้า <span class="keyword">เอกสารอ้างอิง (1)</span> ซึ่งเป็นรายชื่อหนังสือ บทความ และเว็บไซต์ทั้งหมดที่ผู้จัดทำได้ใช้อ้างอิงในการเขียนรายงานฉบับนี้ เพื่อแสดงความน่าเชื่อถือของข้อมูล</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <h2>เอกสารอ้างอิง (Reference) - Page 34</h2>
+        <div class="slide-content">
+            <div class="english-col">
+                <h3>English Summary </h3>
+                <p>This is the second and final page of the <span class="keyword">"REFERENCE"</span> section, listing sources from Structural Learning (n.d.) to The Art of It (n.d.).</p>
+            </div>
+            <div class="thai-col">
+                <h3>สรุปภาษาไทย 🇹🇭</h3>
+                <p>หน้านี้คือหน้า <span class="keyword">เอกสารอ้างอิง (2)</span> เป็นรายชื่อแหล่งข้อมูลอ้างอิงส่วนที่เหลือต่อจากหน้าก่อนหน้า</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="prev" onclick="changeSlide(-1)">&#10094; ก่อนหน้า</button>
+        <div class="slide-number" id="slide-indicator">1 / 34</div>
+        <button class="next" onclick="changeSlide(1)">ถัดไป &#10095;</button>
+    </div>
+
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slideIndicator = document.getElementById('slide-indicator');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+        });
+        slides[n].classList.add('active');
+        slideIndicator.textContent = `${n + 1} / ${totalSlides}`;
+    }
+
+    function changeSlide(n) {
+        currentSlide += n;
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+        showSlide(currentSlide);
+    }
+
+    // Initialize first slide
+    document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+    });
+</script>
+
+</body>
+</html>
